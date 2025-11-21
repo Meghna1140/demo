@@ -1,0 +1,192 @@
+#include <stdio.h>
+#include <string.h>
+#define PI 3.1416
+
+int main() {
+
+// 1. Print name
+    printf("Meghna\n");
+
+// 2. Print name, age, city
+    printf("Meghna\n19\nKanpur\n");
+
+// 3. Sum of two integers
+    int n1, n2;
+    printf("Enter number 1: ");
+    scanf("%d", &n1);
+    printf("Enter number 2: ");
+    scanf("%d", &n2);
+    printf("Sum: %d\n", n1 + n2);
+
+// 4. Product
+    printf("Product: %d\n", n1 * n2);
+
+// 5. Area of circle
+    int r;
+    printf("Enter radius: ");
+    scanf("%d", &r);
+    printf("Area: %.2f\n", PI * r * r);
+
+// 6. Area of rectangle
+    int len, br;
+    printf("Enter length: ");
+    scanf("%d", &len);
+    printf("Enter breadth: ");
+    scanf("%d", &br);
+    printf("Area of rectangle: %d\n", len * br);
+
+// 7 & 8. Marks and percentage
+    int m1,m2,m3,m4,m5; 
+    printf("Enter marks of subject 1 :"); 
+    scanf("%d",&m1); 
+    printf("Enter marks of subject 2 :"); 
+    scanf("%d",&m2); 
+    printf("Enter marks of subject 3 :"); 
+    scanf("%d",&m3); 
+    printf("Enter marks of subject 4 :"); 
+    scanf("%d",&m4); 
+    printf("Enter marks of subject 5 :"); 
+    scanf("%d",&m5);
+    int total = m1 + m2 + m3 + m4 + m5;
+    printf("Total Marks: %d\n", total);
+    printf("Percentage: %.2f\n", total / 5.0);
+
+// 9. Celsius to Fahrenheit
+    float temp;
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &temp);
+    printf("Fahrenheit: %.2f\n", (temp * 1.8) + 32);
+
+// 10. ASCII value
+    char ch;
+    getchar(); // clear buffer
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+    printf("ASCII of %c = %d\n", ch, ch);
+
+// 11. Next and previous number
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Next number: %d\n", num + 1);
+    printf("Previous number: %d\n", num - 1);
+
+// 12. Print float with 2 decimals
+    float num1;
+    printf("Enter a float value: ");
+    scanf("%f", &num1);
+    printf("With 2 decimals: %.2f\n", num1);
+
+// 13. Average of two integers
+    printf("Average of n1 & n2: %.2f\n", (n1 + n2) / 2.0);
+
+// 14. First + last name
+    char first[50], last[50];
+    getchar(); // clear buffer
+    printf("Enter first name: ");
+    fgets(first, 50, stdin);
+    printf("Enter last name: ");
+    fgets(last, 50, stdin);
+
+    // remove newline
+    first[strcspn(first, "\n")] = '\0';
+    last[strcspn(last, "\n")] = '\0';
+
+    printf("Full Name: %s %s\n", first, last);
+
+// 15. Simple Interest
+    float pr,rate,time; 
+    printf("Enter principal :"); 
+    scanf("%f",&pr); 
+    printf("Enter rate :"); 
+    scanf("%f",&rate); 
+    printf("Enter time :"); 
+    scanf("%f",&time);
+    printf("Simple Interest: %.2f\n", (pr * rate * time) / 100);
+
+// 16. Perimeter of square
+    int side;
+    printf("Enter side: ");
+    scanf("%d", &side);
+    printf("Perimeter: %d\n", 4 * side);
+
+// 17. Double & triple
+    int num2;
+    printf("Enter number: ");
+    scanf("%d", &num2);
+    printf("Double: %d\n", num2 * 2);
+    printf("Triple: %d\n", num2 * 3);
+
+// 18. km → meters → centimeters
+    float dist;
+    printf("Enter distance in km: ");
+    scanf("%f", &dist);
+    printf("Meters: %.2f\n", dist * 1000);
+    printf("Centimeters: %.2f\n", dist * 100000);
+
+// 19. Age calculator
+    int year, year1;
+    printf("Enter birth year: ");
+    scanf("%d", &year);
+    printf("Enter current year: ");
+    scanf("%d", &year1);
+    printf("Age: %d\n", year1 - year);
+
+// 20. Take a float input and print 
+    // i.Its integer part 
+    // ii.Its decimal part
+    float num_;
+    printf("Enter a float: ");
+    scanf("%f", &num_);
+
+    int integer = (int)num_;
+    float decimal = num_ - integer;
+
+    printf("Integer part: %d\n", integer);
+    printf("Decimal part: %.2f\n", decimal);
+
+
+// 21. Input 3 numbers and print the largest and smallest without using if/else
+    int a,b,c;
+    printf("Enter number 1 :"); 
+    scanf("%d",&a); 
+    printf("Enter number 2 :"); 
+    scanf("%d",&b); 
+    printf("Enter number 3 :"); 
+    scanf("%d",&c);
+
+    //Largest & smallest of 3 numbers
+    int largest = (a > b ? (a > c ? a : c) : (b > c ? b : c));
+    int smallest = (a < b ? (a < c ? a : c) : (b < c ? b : c));
+
+    printf("Largest: %d\n", largest);
+    printf("Smallest: %d\n", smallest);
+
+    //Check uppercase / lowercase / digit using ASCII
+    char chr;
+    printf("Enter a character: ");
+    scanf(" %c", &chr);
+
+    if(chr >= 'A' && chr <= 'Z')
+        printf("Uppercase\n");
+    else if(chr >= 'a' && chr <= 'z')
+        printf("Lowercase\n");
+    else if(chr >= '0' && chr <= '9')
+        printf("Digit\n");
+    else
+        printf("Special character\n");
+
+    //Print next character
+    char ch1;
+    printf("Enter a character: ");
+    scanf(" %c", &ch1);
+
+    if(ch1 == 'z')
+        printf("a\n");
+    else if(ch1 == 'Z')
+        printf("A\n");
+    else
+        printf("%c\n", ch1 + 1);
+
+    return 0;
+}
